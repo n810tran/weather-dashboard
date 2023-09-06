@@ -1,8 +1,12 @@
 // define global variables
-const apiKey = b47d74ce9a54bff7e09646af224622e6;
+const apiKey = 'b47d74ce9a54bff7e09646af224622e6';
 const searchFormEl = document.querySelector("#search");
 const userInputEl = document.querySelector("#user-input");
-
+const weatherContainerEl = document.querySelector("#current-weather-container");
+const citySearchInputEl = document.querySelector("#searched-city");
+const forecastTitle = document.querySelector("#forecast");
+const forecastContainerEl = document.querySelector("#fiveday-container");
+const pastSearchButtonEl = document.querySelector("#past-search-buttons");
 let pastSearches = [];
 
 //define functions
@@ -27,7 +31,7 @@ let saveSearch = function () {
 };
 
 let pastSearch = function (pastSearch){
-
+    
 }
 
 let getWeather = function (city) {
@@ -37,6 +41,7 @@ let getWeather = function (city) {
         response.json()
         .then(function(data){
             displayWeather(data, city);
+            console.log(response)
         })
     })
 };
